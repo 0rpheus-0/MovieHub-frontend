@@ -35,8 +35,8 @@ export default function MovieSolo() {
             <solo className='movieSolo'>
                 <div >
                     <img className="image" src={movie.poster} alt={movie.title} />
-                    <button onClick={handlerUpdate}>Update</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button className="buttonSoloUpdate" onClick={handlerUpdate}>Update</button>
+                    <button className="buttonSoloDelete" onClick={handleDelete}>Delete</button>
                 </div>
                 <div className='text'>
                     <h1>{movie.title}</h1>
