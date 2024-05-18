@@ -10,25 +10,14 @@ export default function Home() {
         setName(e.target.value)
     }
 
-
-    // useEffect(() => {
-    //     (async () => {
-    //         const data = await (
-    //             await fetch(`http://localhost:8080/movie/name?${new URLSearchParams({ name: name })}`, {
-    //                 method: 'POST'
-    //             })
-    //         ).json()
-    //         console.log(data)
-    //     })()
-    // }, [])
-
     const handleCreate = () => {
-        fetch(`http://localhost:8080/movie/name?${new URLSearchParams({ name: name })}`, {
+        fetch(process.env.REACT_APP_API + `/movie/name?${new URLSearchParams({ name: name })}`, {
             method: 'POST'
         })
-        window.location.reload();
         //navigate('/')
+        window.location.reload();
     }
+
 
     return (
         <div className='wrapper' >

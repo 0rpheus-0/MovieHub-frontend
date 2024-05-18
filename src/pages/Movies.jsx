@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Movie from '../components/Movie';
 
+//require("dotenv").config();
+//const API = "http://localhost:8080"
 export default function Movies() {
     const [movies, setMovies] = useState([])
-
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch("http://localhost:8080/movie")
+                await fetch(process.env.REACT_APP_API + "/movie")
             ).json()
             console.log(data)
             setMovies(data)

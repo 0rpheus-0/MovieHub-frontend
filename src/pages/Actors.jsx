@@ -10,7 +10,7 @@ export default function Actors() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/movie/actor/${id}`)
+                await fetch(process.env.REACT_APP_API + `/movie/actor/${id}`)
             ).json()
             console.log(data)
             setMovies(data)
@@ -22,7 +22,7 @@ export default function Actors() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/actor/${id}`)
+                await fetch(process.env.REACT_APP_API + `/actor/${id}`)
             ).json()
             console.log(data)
             setActor(data)

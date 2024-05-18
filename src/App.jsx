@@ -5,12 +5,13 @@ import Directors from './pages/Directors';
 import Genres from './pages/Genres';
 import Home from './pages/Home';
 import MovieSolo from './pages/MovieSolo';
-import Years from './pages/Years';
 import Update from './pages/Update';
+import Years from './pages/Years';
+//require("dotenv").config();
 
 export default function App() {
   return (
-    <Routes>
+    < Routes >
       <Route path='/' element={<Home />} />
       <Route path='/movie/genre/:id' element={<Genres />} />
       <Route path='/movie/actor/:id' element={<Actors />} />

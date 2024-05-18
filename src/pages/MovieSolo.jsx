@@ -11,7 +11,7 @@ export default function MovieSolo() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/movie/${id}`)
+                await fetch(process.env.REACT_APP_API + `/movie/${id}`)
             ).json()
             console.log(data)
             setMovie(data)
@@ -21,7 +21,7 @@ export default function MovieSolo() {
         movie.poster = '/cat.jpg'
     };
     const handleDelete = () => {
-        fetch(`http://localhost:8080/movie/${id}`, {
+        fetch(process.env.REACT_APP_API + `/movie/${id}`, {
             method: 'DELETE'
         })
         navigate('/')

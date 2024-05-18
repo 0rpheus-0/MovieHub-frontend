@@ -9,7 +9,7 @@ export default function Update() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/movie/${id}`)
+                await fetch(process.env.REACT_APP_API + `/movie/${id}`)
             ).json()
             console.log(data)
             setMovie({
@@ -28,7 +28,7 @@ export default function Update() {
         const d = e.target.elements
         console.log('Update', d)
         const splitArray = arr => arr.split(',').map(x => x.trim()).map(x => ({ name: x }))
-        fetch(`http://localhost:8080/movie/${id}`, {
+        fetch(process.env.REACT_APP_API + `/movie/${id}`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',

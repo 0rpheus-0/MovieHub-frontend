@@ -10,7 +10,7 @@ export default function Genres() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/movie/genre/${id}`)
+                await fetch(process.env.REACT_APP_API + `/movie/genre/${id}`)
             ).json()
             console.log(data)
             setMovies(data)
@@ -22,7 +22,7 @@ export default function Genres() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/genre/${id}`)
+                await fetch(process.env.REACT_APP_API + `/genre/${id}`)
             ).json()
             console.log(data)
             setGenre(data)

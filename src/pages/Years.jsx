@@ -9,7 +9,7 @@ export default function Years() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/movie/year/${id}`)
+                await fetch(process.env.REACT_APP_API + `/movie/year/${id}`)
             ).json()
             console.log(data)
             setMovies(data)
@@ -21,7 +21,7 @@ export default function Years() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/year/${id}`)
+                await fetch(process.env.REACT_APP_API + `/year/${id}`)
             ).json()
             console.log(data)
             setYear(data)

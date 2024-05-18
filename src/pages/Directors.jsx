@@ -10,7 +10,7 @@ export default function Directors() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/movie/director/${id}`)
+                await fetch(process.env.REACT_APP_API + `/movie/director/${id}`)
             ).json()
             console.log(data)
             setMovies(data)
@@ -22,7 +22,7 @@ export default function Directors() {
     useEffect(() => {
         (async () => {
             const data = await (
-                await fetch(`http://localhost:8080/director/${id}`)
+                await fetch(process.env.REACT_APP_API + `/director/${id}`)
             ).json()
             console.log(data)
             setDirector(data)
